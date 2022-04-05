@@ -1,0 +1,11 @@
+1. App creation
+
+npx create-react-app appname
+
+2. cd appname
+
+3. To start the application
+
+npm start
+
+4. npm install
