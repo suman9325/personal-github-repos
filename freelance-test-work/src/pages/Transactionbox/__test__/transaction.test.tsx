@@ -146,50 +146,32 @@ test('check row click fn', () => {
     expect(rowSelect).toHaveBeenCalledTimes(0);
 });
 
-describe('render data', ()=>{
+const check=(value:string)=>{
+    if (value==''){
+        return "ok"
+    }
+    else{
+        return "not ok"
+    }
+}
+describe('check', ()=>{
+    test('checking if', ()=>{
+        render(<Transactionbox />);
+        // const check = jest.fn();
+        // let res = jest.fn();
+        let value="123"
+        const res= check(value)
+        expect(res).toEqual("not ok");
+    })
+
+    test('checking eelse', ()=>{
+        render(<Transactionbox />);
+        // const check = jest.fn();
+        // let res = jest.fn();
+        let value=""
+        const res= check(value)
+        expect(res).toEqual("ok");
+    })
     
-    beforeEach(async()=>{
-        (apiData as jest.MockedFunction<typeof apiData> ).mockResolvedValue(
-            {
-                "claimNumber": "567482670330100",
-                "pharmacyId": "1234567890",
-                "currentStatus": "R",
-            
-                "pharmacyName": "",
-                "fillDate": "2021-11-21",
-                "paidCount": "2",
-                "rejectedCount": "0",
-                "reversedCount": "0",
-                "capturedCount": "0",
-                "transaction": [
-                    {
-                        "claimSequenceNumber": 1,
-                        "memberId": "THE_MATRIX_NEO_2",
-                        "patientFirstName": "Neo",
-                        "patientLastName": "Deo",
-                        "submitted": "2022-02-08T15:58:28",
-                        "status": "P",
-                    },
-                    {
-                        "claimSequenceNumber": 2,
-                        "memberId": "THE_MATRIX_NEO_2",
-                        "patientFirstName": "Neo",
-                        "patientLastName": "Deo",
-                        "submitted": "2022-02-08T16:58:28",
-                        "status": "P",
-                    }
-                ]
-            }
-        )
-    })
-
-    afterEach(()=>{
-        jest.clearAllMocks()
-    })
-
-    it('render table data', ()=>{
-        const component = render(<Transactionbox />)
-        waitFor(()=>expect(component.getByLabelText("Seq")).toBeInTheDocument())
-        waitFor(()=>expect(component.getByLabelText("Member ID")).toBeInTheDocument())
-    })
+    
 })
