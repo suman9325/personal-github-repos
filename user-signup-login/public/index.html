@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
+  <!-- Global stylesheets -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+  <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+  <link href="assets/js/plugins/notifications/sweetalert/sweetalert2.scss" rel="stylesheet" type="text/css">
+  <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/css-checkbox-switch.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/relotech-chat.css" rel="stylesheet" type="text/css">
+  <!-- /global stylesheets -->
+
+  <!-- Core JS files -->
+  <script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/libraries/jasny_bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/libraries/jquery_ui/core.min.js"></script>
+  <script type="text/javascript" src="assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+  <!-- /core JS files -->
+
+  <!-- Theme JS files -->
+  <script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_select.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/forms/selects/selectboxit.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/forms/tags/tagsinput.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/forms/tags/tokenfield.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/forms/inputs/touchspin.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/forms/inputs/maxlength.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/forms/inputs/formatter.min.js"></script>
+
+  <script type="text/javascript" src="assets/js/plugins/ui/nicescroll.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/tables/datatables/datatables.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/tables/datatables/extensions/select.min.js"></script>
+  <!-- <script type="text/javascript" src="assets/js/plugins/tables/datatables/extensions/buttons.min.js"></script> -->
+  <script type="text/javascript"
+    src="assets/js/plugins/tables/datatables/extensions/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/tables/datatables/extensions/jszip.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/tables/datatables/extensions/buttons.html5.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/pickers/datepicker.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+  <script type="text/javascript" src="assets/js/charts/highcharts/highcharts.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/editors/tinymce/js/tinymce/tinymce.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1XtsegzOIIBaqGL0QugHFIaL2pvp8f8A&libraries=places"></script>
+  <script type="text/javascript" src="assets/js/plugins/jquerycreditCardValidator/jquery.creditCardValidator.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/notifications/pnotify.min.js"></script>
+
+  <!-- <script type="text/javascript" src="assets/js/core/app.js"></script> -->
+  <script type="text/javascript" src="assets/js/pages/form_select2.js"></script>
+  <script type="text/javascript" src="assets/js/pages/layout_fixed_custom.js"></script>
+  <!-- <script type="text/javascript" src="assets/js/pages/datatables_basic.js"></script> -->
+  <!-- <script type="text/javascript" src="assets/js/pages/form_floating_labels.js"></script> -->
+  <!-- /theme JS files -->
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+
+
+  <script type="text/javascript">
+    window.google = google;
+    window.Highcharts = Highcharts;
+    window.$ = $;
+    window.swal = swal;
+    window.tinymce = tinymce;
+    window.PNotify = PNotify;
+    window.firebase = firebase;
+  </script>
+
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>Signup-Login</title>
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+</body>
+
+</html>

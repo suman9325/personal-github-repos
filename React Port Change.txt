@@ -1,0 +1,7 @@
+How to change port in React?
+
+1) Go to package.json
+2) Go to Script json
+3) then Update it
+
+// "start": "set PORT=3021 && react-scripts start",
