@@ -1,0 +1,11 @@
+.MainEach{
+  padding: 35px;
+  margin-top: 25px;
+  background-color: rgb(143, 235, 204);
+  border-radius: 5px;
+}
+
+.MainEach h1{
+  font-size: 34px;
+  color: #fff;
+}
