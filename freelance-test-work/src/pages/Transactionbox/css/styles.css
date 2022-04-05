@@ -1,0 +1,90 @@
+
+/* Transactionbox */
+
+.card-width {
+    width: 13rem;
+    float: left;
+}
+
+.card-headings{
+    color: #008290;
+}
+
+.fvAeSn {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    max-width: 6% !important;
+    min-width: 140px !important;
+}
+
+.fSQziN {
+    position: relative;
+    width: 100%;
+    border-radius: inherit;
+    overflow-x: hidden !important;
+    overflow-y: hidden;
+    min-height: 0;
+}
+
+/* 20.02.22 */
+
+.detail-bg-color{
+    background-color: aliceblue;
+}
+
+.m-t-2{
+    margin-top: 2%;
+    border-style: groove;
+    padding: 15px;
+}
+
+.detail-padding{
+    padding: 15px;
+}
+
+.table{
+    width: 100%;
+}
+
+table, th, tr, td{
+    padding: 5px;
+}
+
+.MuiTab-textColorPrimary.Mui-selected {
+    color: #008290 !important;
+}
+
+.PrivateTabIndicator-colorPrimary-2 {
+    background-color: #008290 !important;
+}
+
+.info-btn{
+    border-style: none;
+    background-color: inherit;
+}
+
+.info-modal{
+    position: 'absolute';
+    top: '50%';
+  left: '50%';
+  transform: 'translate(-50%, -50%)';
+  width: 400;
+  /* bgcolor: 'background.paper'; */
+  background-color: cornflowerblue;
+  border: '2px solid #000';
+  box-shadow: 24;
+  
+}
+
+
+.PrivateTabIndicator-colorSecondary-3 {
+    background-color: #008290 !important;
+}

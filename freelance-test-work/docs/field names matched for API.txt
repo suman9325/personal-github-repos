@@ -1,0 +1,42 @@
+claim: 
+
+binNumber -BIN
+processControlNumber -PCN
+dateOfService -fillDate
+submitDate- Submit Date
+cob- COB
+additionalMessageInformation- local Message
+prescriptionServiceReferenceNumber- RX number
+fillNumber -Refill
+transactionCode- Trasaction Code
+paReasonCode - PA Reason Code
+paNumber - PA Number
+transactionResponseStatus - Claim Status
+"rejectCode" : "50" -
+},
+{
+rejectCode" : "05"	 -  Reject code 
+
+
+Member:
+
+carrier: carrier
+account: account
+groupId:group
+pharmacyBenifitPlanCode:plan code
+memberId: member Id
+memberName: member Name
+gender: sex
+dateOfBirth:date of birth
+
+
+Product:
+
+drugName:drug name
+productServiceId:product Id
+gpi: gpi
+genericIndicator: generic indicator
+quantityDispensed:display quantity
+daysSupply: day supply
+compoundCode:compound code
+dispenseAsWrittenDawProductSelectionCode: product selection code

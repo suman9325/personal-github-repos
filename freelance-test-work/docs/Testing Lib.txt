@@ -1,0 +1,3 @@
+npm install --save-dev @testing-library/react
+
+npm i @testing-library/user-event

@@ -1,0 +1,23 @@
+
+
+/* Navbar */
+
+.nav-heading {
+    text-align: left;
+}
+
+.css-hip9hq-MuiPaper-root-MuiAppBar-root{
+background-color: #008290 !important;
+}
+
+.menu-item{
+    padding: 10px;
+}
+
+.menu-anchor{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
