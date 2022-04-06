@@ -36,9 +36,9 @@ import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import moment from 'moment';
 import InfoIcon from '@material-ui/icons/Info';
-import HomeIcon from '@mui/icons-material/Home';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import HomeIcon from '@material-ui/icons/Home';
+import ArrowBackIosNewIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 import { apiData } from '../../common/demoApiData/apiData';
 import { detailApi } from '../../common/demoApiData/detailApiData';
