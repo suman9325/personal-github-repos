@@ -36,7 +36,9 @@ import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import moment from 'moment';
 import InfoIcon from '@material-ui/icons/Info';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import HomeIcon from '@mui/icons-material/Home';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 import { apiData } from '../../common/demoApiData/apiData';
 import { detailApi } from '../../common/demoApiData/detailApiData';
@@ -201,7 +203,7 @@ const Transactionbox = (props) => {
     const handleTabChange = (event, newValue) => {
         setTabTypeValue(newValue);
         console.log(newValue);
-        
+
     };
 
 
@@ -279,8 +281,8 @@ const Transactionbox = (props) => {
                     }
 
                     < br />
-                    
-                    <div id="claim-number-search" style={{ display : tabTypeValue == 0 ? "block" : "none"}}>
+
+                    <div id="claim-number-search" style={{ display: tabTypeValue == 0 ? "block" : "none" }}>
                         {
                             showMainbox &&
                             <Card sx={{ minWidth: 800, transform: 'scale(1)' }} elevation={3} data-testid="mainbox-area">
@@ -309,13 +311,6 @@ const Transactionbox = (props) => {
 
                                 {tabDisplay &&
                                     <div className='tab-display' style={{ marginTop: "25%" }}>
-                                        <div className='back-btn'>
-
-                                            <button onClick={() => { setTabDisplay(false); setDisplayTable(true) }}>
-                                                <ArrowBackIcon />
-                                            </button>
-                                        </div>
-
                                         <Card elevation={4}>
                                             <CardContent>
                                                 <Paper square >
@@ -376,6 +371,23 @@ const Transactionbox = (props) => {
                                                                 <ProductTabDetails data={detailApi[0]} />
                                                             </div>
 
+                                                            <br />
+                                                            <div className='details-footer'>
+                                                                <a href='/'>
+                                                                    <button className='footer-buttons'>
+                                                                        <HomeIcon />
+                                                                    </button>
+                                                                </a>
+
+                                                                <button className='footer-buttons' onClick={() => { setTabDisplay(false); setDisplayTable(true) }}>
+                                                                    <ArrowBackIosNewIcon />
+                                                                </button>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                <button className='footer-buttons'>
+                                                                    <ArrowForwardIosIcon />
+                                                                </button>
+                                                            </div>
+
                                                         </>
                                                     }
                                                 </Paper>
@@ -387,7 +399,7 @@ const Transactionbox = (props) => {
                         }
                     </div>
 
-                    <div id="member-id-search" style={{ display : tabTypeValue == 1 ? "block" : "none"}}>
+                    <div id="member-id-search" style={{ display: tabTypeValue == 1 ? "block" : "none" }}>
                         <p>Hello member</p>
                     </div>
                 </div>

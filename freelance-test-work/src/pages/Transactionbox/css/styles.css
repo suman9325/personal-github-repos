@@ -88,3 +88,12 @@ table, th, tr, td{
 .PrivateTabIndicator-colorSecondary-3 {
     background-color: #008290 !important;
 }
+
+.footer-buttons{
+    background-color: white;
+    border: none;
+}
+
+.details-footer{
+    text-align: center;
+}
