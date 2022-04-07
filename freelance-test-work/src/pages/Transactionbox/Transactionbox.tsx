@@ -215,7 +215,27 @@ const Transactionbox = (props) => {
                 <Link underline="hover" color="inherit" href="/" >
                     Home
                 </Link>
-                <Typography color="primary" > Claim Search </Typography>
+                {tabTypeValue == 0 &&
+                    <>
+                        <Typography color={showMainbox ? "inherit" : "primary"} > Claim Search </Typography>
+                        {showMainbox &&
+                            <Link underline="hover" color={tabDisplay ? "inherit" : "primary"} href="#" >
+                                Claim Transactions
+                            </Link>
+                        }
+                        {tabDisplay &&
+                            <Link underline="hover" color="primary" href="#" >
+                                Claim Transaction Detail
+                            </Link>
+                        }
+                    </>
+                }
+                {tabTypeValue == 1 &&
+                    <>
+                        <Typography color={showMainbox ? "inherit" : "primary"} > Member Id </Typography>
+                    </>
+                }
+
             </Breadcrumbs>
 
             <div className='viewport' >
@@ -238,31 +258,51 @@ const Transactionbox = (props) => {
                     {/* Tab heading end */}
 
                     <br /><br />
-                    <TextField
-                        placeholder='Claim Number'
-                        data-testid="input-field"
-                        onChange={handleChange}
-                        value={value}
-                        onKeyPress={event => {
-                            if (event.key === 'Enter') {
-                                check()
-                            }
-                        }}
-                        InputProps={{
-                            endAdornment: (
-                                <InputAdornment position="end" >
-                                    <IconButton edge="end" color="primary" onClick={() => cancel()} data-testid="cancel-btn">
-                                        <CancelIcon />
-                                    </IconButton>
-                                </InputAdornment>
-                            ),
 
-                        }}
-                    />
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <Button variant="contained" color="primary" size="small" onClick={() => check()} data-testid="search-btn">
-                        SEARCH
-                    </Button>
+                    <div className='claim-search' style={{ display: tabTypeValue == 0 ? "block" : "none" }}>
+                        <TextField
+                            placeholder='Claim Number'
+                            data-testid="input-field"
+                            onChange={handleChange}
+                            value={value}
+                            onKeyPress={event => {
+                                if (event.key === 'Enter') {
+                                    check()
+                                }
+                            }}
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position="end" >
+                                        <IconButton edge="end" color="primary" onClick={() => cancel()} data-testid="cancel-btn">
+                                            <CancelIcon />
+                                        </IconButton>
+                                    </InputAdornment>
+                                ),
+
+                            }}
+                        />
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <Button variant="contained" color="primary" size="small" onClick={() => check()} data-testid="search-btn">
+                            SEARCH
+                        </Button>
+                    </div>
+
+                    <div className='member-search' style={{ display: tabTypeValue == 1 ? "block" : "none" }}>
+                        <TextField
+                            required
+                            label="Member Id"
+                            color="inherit"
+                            focused
+                            variant='outlined'
+                            size="small"
+                        />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <Button variant="contained" color="primary" size="small" onClick={() => check()} data-testid="search-btn">
+                            SEARCH
+                        </Button>
+                    </div>
+
 
                     {/* --------------- Unhappy case ---------- */}
 
@@ -279,6 +319,7 @@ const Transactionbox = (props) => {
                             <ValidCase />
                             : null
                     }
+
 
                     < br />
 
@@ -400,7 +441,7 @@ const Transactionbox = (props) => {
                     </div>
 
                     <div id="member-id-search" style={{ display: tabTypeValue == 1 ? "block" : "none" }}>
-                        <p>Hello member</p>
+                        {/* <TextField required label="Member Id" color="inherit" focused variant='outlined'/> */}
                     </div>
                 </div>
             </div>
