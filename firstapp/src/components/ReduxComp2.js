@@ -4,7 +4,7 @@ import * as Actiontype from './ReduxAction';
 
 class ReduxComp2 extends Component {
     state = {
-        message: ""
+        message: "Hello Redux"
     }
 
     showCounter = () => {

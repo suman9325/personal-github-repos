@@ -5,7 +5,7 @@ const Details = (props) => {
         <>
             <div className="initial-padding">
                 <table className="table" data-testid="Details">
-                    <thead className="Detailstable-1-head" data-testid="DetailstableHead1">
+                    {/* <thead className="Detailstable-1-head" data-testid="DetailstableHead1"> */}
                         <tr className="card-heading">
                             <th className="m-w-2" data-testid="TransactionCard-claimNumber-heading">Claim Number</th>
                             <th className="m-w-2" data-testid="claim-status-heading">Current Status</th>
@@ -13,7 +13,7 @@ const Details = (props) => {
                             <th data-testid="claim-count-heading">Count</th>
                             <th> {' '}</th>
                         </tr>
-                    </thead>
+                    {/* </thead> */}
                     <tbody className="Detailstable-1-body" data-testid="DetailstableBody1">
                         <tr>
                             <td data-testid="TransactionCard-claimNumber">{!!claimList && claimList.claimNumber}</td>
@@ -37,8 +37,8 @@ const Details = (props) => {
                 <table className="table" data-testid="Detailstable2">
                     <thead className="Detailstable-2-head" data-testid="DetailstableHead2">
                         <tr className="card-heading">
-                            <th className="m-w-2" data-testid="claim-pharmacyId-heading">Pharmacy ID</th>
-                            <th className="m-w-2" data-testid="claim-pharmacy-name-title">Pharmacy Name</th>
+                            <th data-testid="claim-pharmacyId-heading">Pharmacy ID</th>
+                            <th data-testid="claim-pharmacy-name-title">Pharmacy Name</th>
                         </tr>
                     </thead>
                     <tbody className="Detailstable-2-body" data-testid="DetailstableBody2">

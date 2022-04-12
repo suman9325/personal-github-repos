@@ -2,6 +2,7 @@ import * as ActionType from './ReduxAction';
 
 const INITIAL_STATE = {
     reducer_data: 0,
+    updatedFile:""
 }
 
 function handleChange(state, change) {

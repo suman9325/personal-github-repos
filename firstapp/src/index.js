@@ -7,9 +7,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import Reducers from './components/Reducers';
+import CombineReducers from './components/CombineReducers';
 
-const store1= createStore(Reducers);
+const store1= createStore(CombineReducers);
 ReactDOM.render(<React.StrictMode>
     <Provider store={store1}>
         <AppFunction />

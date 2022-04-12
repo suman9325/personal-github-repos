@@ -5,6 +5,7 @@ import Register from './components/Register';
 import Table from './components/Table';
 import FileUpload from './components/FileUpload';
 import MultipleFile from './components/MultipleFile';
+import DependentDropdown from './components/Dependent_dropdown';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       {/* <Register /> */}
       {/* <Table /> */}
       {/* <FileUpload /> */}
-      <MultipleFile />
+      {/* <MultipleFile /> */}
+      <DependentDropdown />
     </div>
   );
 }

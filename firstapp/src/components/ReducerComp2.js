@@ -12,7 +12,7 @@ const messageReducer = (state = initialState, action) => {
 
         case ActionType.SET_MESSAGE:
             return {
-                reducer_msg: "Hi Redux"
+                reducer_msg: action.data
             }
         default:
             return {

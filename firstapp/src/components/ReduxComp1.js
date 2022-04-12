@@ -7,7 +7,6 @@ class ReduxComp1 extends Component{
         super(props);
         this.state={
             no:0,
-            
         }
     }
 
@@ -25,9 +24,11 @@ class ReduxComp1 extends Component{
         return(
             <React.Fragment>
               <h1>Increase or Decrease data number :{this.state.no}</h1> 
-              <p>{this.props.stateMessage}</p>
+              <p>{this.props.msg}</p>
               <button onClick={this.props.increaseData}> Increase </button>
               <button onClick={this.props.decreaseData}> Decrease </button>
+
+              
             </React.Fragment>
         
         );
@@ -37,7 +38,7 @@ class ReduxComp1 extends Component{
 const mapStateToProps= state =>{
     return{
         count: state.counterReducer.reducer_data ,
-        stateMessage: state.messageReducer.reducer_msg || state.messageReducer.state.reducer_msg
+        msg: state.messageReducer.reducer_msg 
     };
     
 }
