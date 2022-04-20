@@ -55,11 +55,16 @@ import DisplayModal from '../../common/DisplayModal';
 const Transactionbox = (props) => {
 
     const [showMainbox, setshowMainbox] = useState(false);
+    const [showMainboxByMemberId, setshowMainboxByMemberId] = useState(false);
     const [unhappycase, setunhappycase] = useState(false);
+    const [unhappycaseByMemberId, setunhappycaseByMemberId] = useState(false);
     const [EnterValidcase, setEnterValidcase] = useState(false);
+    const [EnterValidcaseByMemberId, setEnterValidcaseByMemberId] = useState(false);
     const [value, setValue] = useState("");
+    const [valueByMemberId, setValueByMemberId] = useState("");
     const [claimList, setClaimList] = useState("")
     const [displayTable, setDisplayTable] = useState(false)
+    const [displayTableByMemberId, setDisplayTableByMemberId] = useState(false)
     const [displayDetails, setDisplayDetails] = useState(false)
     const [tabValue, setTabValue] = useState(0);
     const [tabTypeValue, setTabTypeValue] = useState(0);
@@ -131,6 +136,40 @@ const Transactionbox = (props) => {
 
     ]
 
+    const columnsByMemberId = [
+        {
+            id: 1,
+            name: "Fill Date",
+            selector: (row: any) => moment(row.submitted).subtract(6, "hours").format("MM/DD/YYYY hh: mm:ss A"),
+            sortable: true,
+            reorder: true,
+        },
+        {
+            id: 2,
+            name: "Claim Number",
+            selector: (row: any) => row.memberId,
+            sortable: true,
+            reorder: true
+        },
+        {
+            id: 3,
+            name: "Seq",
+            // selector: (row) => <a href="#" onClick={() => this.handleFetchDetails(row)}>{row.id}</a>,
+            selector: (row: any) => <div data-testid="claimSequenceNumber">{row.claimSequenceNumber}</div>,
+            sortable: true,
+            reorder: true,
+        },
+        {
+            id: 4,
+            name: "Status",
+            selector: (row: any) => row.status,
+            sortable: true,
+            left: true,
+            reorder: true
+        },
+
+    ]
+
     const cancel = () => {
         var value = ""
         setValue(value);
@@ -178,6 +217,35 @@ const Transactionbox = (props) => {
         }
     }
 
+    //Search by Member Id funtions
+
+    const handleChangeByMemberId = (e) => {
+        setValueByMemberId(e.target.value)
+    }
+
+    const cancelByMemberId = () => {
+        var valueByMemberId = ""
+        setValueByMemberId(value);
+        setshowMainboxByMemberId(false);
+        setunhappycaseByMemberId(false);
+        setEnterValidcaseByMemberId(false);
+    }
+
+    const checkByMemberId = () => {
+
+        if (valueByMemberId === "") {
+            setshowMainboxByMemberId(false);
+            setunhappycaseByMemberId(false);
+            setEnterValidcaseByMemberId(false);
+        } else {
+            setClaimList(apiData)
+            setDisplayTableByMemberId(true)
+            setshowMainboxByMemberId(true);
+
+            // call api here
+        }
+    }
+
     const rowSelect = (row) => {
         console.log('row', row);
         setCheckedRows(row)
@@ -187,6 +255,14 @@ const Transactionbox = (props) => {
         setDetailData(detailApi)
 
     }
+
+    const rowSelectByMemberId = (row) => {
+        console.log('row', row);
+        
+
+    }
+
+    
 
     const showModal = () => {
         setIsShowModal(!isShowModal)
@@ -215,11 +291,24 @@ const Transactionbox = (props) => {
                 <Link underline="hover" color="inherit" href="/" >
                     Home
                 </Link>
+                {/* {tabTypeValue == 0 &&
+                    <>
+                        <Link underline="hover" color={showMainbox ? "inherit" : "primary"} href="/"> Claim Search </Link>
+                        <Link underline="hover" color={tabDisplay ? "inherit" : "primary"} href="/" style={{display: showMainbox ? "block" :"none"}}
+                         >
+                               Claim Transactions
+                            </Link>
+                            <Link underline="hover" color="primary" href="#" style={{display: tabDisplay ? "block" :"none"}}>
+                               Claim Transaction Detail
+                            </Link>
+                    </>
+                } */}
+
                 {tabTypeValue == 0 &&
                     <>
-                        <Typography color={showMainbox ? "inherit" : "primary"} > Claim Search </Typography>
+                        <Link underline="hover" color={showMainbox ? "inherit" : "primary"} href="/"> Claim Search </Link>
                         {showMainbox &&
-                            <Link underline="hover" color={tabDisplay ? "inherit" : "primary"} href="#" >
+                            <Link underline="hover" color={tabDisplay ? "inherit" : "primary"} href="/" >
                                 Claim Transactions
                             </Link>
                         }
@@ -230,6 +319,7 @@ const Transactionbox = (props) => {
                         }
                     </>
                 }
+
                 {tabTypeValue == 1 &&
                     <>
                         <Typography color={showMainbox ? "inherit" : "primary"} > Member Id </Typography>
@@ -292,13 +382,24 @@ const Transactionbox = (props) => {
                         <TextField
                             required
                             label="Member Id"
-                            color="inherit"
                             focused
                             variant='outlined'
                             size="small"
+                            onChange={handleChangeByMemberId}
+                            value={valueByMemberId}
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position="end" >
+                                        <IconButton edge="end" color="primary" onClick={() => cancelByMemberId()} data-testid="cancel-btn">
+                                            <CancelIcon />
+                                        </IconButton>
+                                    </InputAdornment>
+                                ),
+
+                            }}
                         />
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <Button variant="contained" color="primary" size="small" onClick={() => check()} data-testid="search-btn">
+                        <Button variant="contained" color="primary" size="small" onClick={() => checkByMemberId()} data-testid="search-btn">
                             SEARCH
                         </Button>
                     </div>
@@ -441,7 +542,25 @@ const Transactionbox = (props) => {
                     </div>
 
                     <div id="member-id-search" style={{ display: tabTypeValue == 1 ? "block" : "none" }}>
-                        {/* <TextField required label="Member Id" color="inherit" focused variant='outlined'/> */}
+                        {
+                            showMainboxByMemberId &&
+                            <Card sx={{ minWidth: 800, transform: 'scale(1)' }} elevation={3} data-testid="mainbox-area">
+                                {
+                                    displayTableByMemberId &&
+                                    <div data-testid="data-table">
+                                        <DisplayTable
+                                            title="Fake Data"
+                                            columns={columnsByMemberId}
+                                            data={claimList.transaction}
+                                            defaultSortFieldId={1}
+                                            pagination={true}
+                                            onRowClicked={(row) => rowSelectByMemberId(row)}
+
+                                        />
+                                    </div>
+                                }
+                            </Card>
+                        }
                     </div>
                 </div>
             </div>

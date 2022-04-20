@@ -97,3 +97,9 @@ table, th, tr, td{
 .details-footer{
     text-align: center;
 }
+
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color:black !important;
+    border-width: 2px;
+}

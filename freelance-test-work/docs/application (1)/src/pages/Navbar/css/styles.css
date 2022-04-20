@@ -1,0 +1,23 @@
+.nav-heading {
+    text-align: left;
+    color: #fff !important;
+}
+.user-btn{
+    color: #fff !important;
+}
+.hamburger{
+    color: #fff !important;
+}
+.menu-navigation .nav-heading{
+    background-color: #008290 !important;
+}
+.menu-item {
+    padding: 10px;
+}
+.menu-anchor{
+    text-decoration: none;
+    color:inherit;
+}
+.MuiBox-root > header {
+    background-color: #008290 !important;
+}

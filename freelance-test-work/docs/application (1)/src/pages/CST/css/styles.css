@@ -1,0 +1,26 @@
+.viewport {
+    margin-left: 7%;
+    margin-right: 5%;
+    margin-top: 2%; 
+}
+.pos-left {
+    text-align: left;
+}
+.clr-btn {
+    float: left;
+    margin-right: 10px;
+}
+.response {
+    margin-top: 30px;
+}
+.breadcrumb-h {
+    margin-left: 7%;
+    margin-top: 3%;
+}
+.MuiButton-containedPrimary:hover {
+    background-color: #367F94 !important;
+}
+.MuiButton-containedPrimary {
+    color: #fff;
+    background-color: #367F94 !important;
+}

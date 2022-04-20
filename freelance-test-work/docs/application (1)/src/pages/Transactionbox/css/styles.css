@@ -1,0 +1,137 @@
+.m-b-2 {
+  margin-bottom: 2%;
+}
+.m-w-2 {
+  width: 20%;
+}
+.m-w-4{
+  width: 4%;
+}
+.m-w-22 {
+  width: 22%;
+}
+.card-width {
+  width: 13rem;
+  float: left;
+}
+.card-heading {
+  color: #367f94;
+}
+.claim-table {
+  margin-left: 4%;
+  margin-right: 4%;
+}
+.detail-bg-color {
+  background-color: aliceblue;
+}
+.m-t-2 {
+  margin-top: 2%;
+  border-style: groove;
+  padding: 15px;
+}
+.detail-padding {
+  padding: 15px;
+  margin-left: 2%;
+}
+.initial-padding {
+  padding: 15px;
+  margin-left: 4%;
+}
+.detail-tab-view {
+  margin-top: 5%;
+}
+.table {
+  width: 100%;
+}
+table,
+th,
+tr,
+td {
+  padding: 5px;
+}
+.MuiTab-textColorPrimary.Mui-selected {
+  color: #367f94 !important;
+  font-weight: bolder;
+  font-size: 14px;
+  opacity: 1;
+}
+.PrivateTabIndicator-colorPrimary-2 {
+  background-color: black !important;
+}
+.message {
+  text-align: left;
+  padding: 0em;
+  font-size: smaller;
+  width: max-content;
+  white-space: pre;
+}
+.info-btn {
+  border-style: none;
+  background-color: inherit;
+}
+.info-modal {
+  position: "absolute";
+  top: "50%";
+  left: "50%";
+  transform: "translate(-50%, -50%)";
+  width: 400;
+  background-color: red;
+  border: "2px solid #000";
+  box-shadow: 24;
+}
+.detail-tabs {
+  margin-top: -6%;
+}
+.cancel-btn {
+  color: #b0aeae !important;
+}
+.table td,
+.table th {
+  border-top: none !important;
+  padding: 0.25rem !important;
+  border-bottom: none !important;
+}
+.alert-one {
+  background-color: #fff !important;
+}
+.alert-two {
+  background-color: #fff !important;
+}
+.search-box {
+  border-color: #008290 !important;
+}
+.MuiPaper-elevation10 {
+  border-style: groove;
+}
+.tab-details{
+  border-style: groove !important;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.viewport {
+  margin-left: 7%;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+.footer-buttons{
+  background-color: white;
+  color: #707070;
+  border: none;
+  size: small;
+}
+.details-footer{
+  text-align: center;
+  color: #707070;
+}
+.tab-heading{
+  color: #008290 !important;
+}
+.PrivateTabIndicator-colorSecondary-3 {
+  background-color: #008290 !important;
+}
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #008290 !important;
+  border-width: 2px;
+}
+
