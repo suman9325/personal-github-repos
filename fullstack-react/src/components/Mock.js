@@ -13,7 +13,8 @@ class MockAPI extends React.Component{
     }
 
     componentDidMount(){
-        alert(this.props.location.id1)
+        if(!!this.props.location.state && !!this.props.location.state.id1)
+        // alert(this.props.location.id1)
         alert(this.props.location.state.id1)
         alert(this.props.match.params.id);
     }

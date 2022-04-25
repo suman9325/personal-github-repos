@@ -16,6 +16,7 @@ class SearchableDD extends React.Component {
 
     componentDidMount() {
         let updatedCountry = []
+        // updatedCountry.push({ value: '', label: 'All'})
         for (let index = 0; index < this.state.country.length; index++) {
             updatedCountry.push({ value: this.state.country[index].cid, label: this.state.country[index].cname })
         }
@@ -28,12 +29,14 @@ class SearchableDD extends React.Component {
                 <div style={{ width: "30%" }}>
                     {this.state.updatedCountry.length !== 0 &&
                         <Searchable
-                            value={['']}
+                            value={[]}
                             multiple
                             hideSelected
                             options={this.state.updatedCountry}
                             onSelect={value => {
-                                console.log(value);
+
+                                console.log(value.toString());
+                                
                             }}
                         />}
                 </div>

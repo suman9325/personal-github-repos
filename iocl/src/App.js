@@ -6,6 +6,7 @@ import Table from './components/Table';
 import FileUpload from './components/FileUpload';
 import MultipleFile from './components/MultipleFile';
 import DependentDropdown from './components/Dependent_dropdown';
+import SearchableDD from './components/SearchableDD';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       {/* <Table /> */}
       {/* <FileUpload /> */}
       {/* <MultipleFile /> */}
-      <DependentDropdown />
+      {/* <DependentDropdown /> */}
+      <SearchableDD />
     </div>
   );
 }
