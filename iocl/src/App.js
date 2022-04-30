@@ -8,16 +8,21 @@ import MultipleFile from './components/MultipleFile';
 import DependentDropdown from './components/Dependent_dropdown';
 import SearchableDD from './components/SearchableDD';
 
+import Autocomplete from './components/AutoComplete/AutoComplete';
+
 function App() {
   return (
-    <div className="App">
+    <div>
       {/* <Login /> */}
       {/* <Register /> */}
       {/* <Table /> */}
       {/* <FileUpload /> */}
       {/* <MultipleFile /> */}
       {/* <DependentDropdown /> */}
-      <SearchableDD />
+      {/* <SearchableDD /> */}
+
+      <Autocomplete />
+
     </div>
   );
 }
