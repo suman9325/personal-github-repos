@@ -15,13 +15,12 @@ function App() {
     <div>
       {/* <Login /> */}
       {/* <Register /> */}
-      {/* <Table /> */}
+      <Table />
       {/* <FileUpload /> */}
       {/* <MultipleFile /> */}
       {/* <DependentDropdown /> */}
       {/* <SearchableDD /> */}
-
-      <Autocomplete />
+      {/* <Autocomplete /> */}
 
     </div>
   );

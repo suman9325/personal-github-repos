@@ -11,13 +11,13 @@ class Table extends React.Component {
             searchText: "",
             columnData: [
                 {
-                    name: 'Emp userId',
-                    selector: row => row.userId,
+                    name: 'Employee id',
+                    selector: row => row.id,
                     sortable: true,
                 },
                 {
-                    name: 'Employee id',
-                    selector: row => row.id,
+                    name: 'Title',
+                    selector: row => row.title,
                     sortable: true,
                 },
                 {
@@ -26,6 +26,8 @@ class Table extends React.Component {
                     sortable: true,
                 },
             ],
+
+            sortedIds: "",
 
             form_data: {
                 id: "",
@@ -36,11 +38,13 @@ class Table extends React.Component {
         }
     }
 
+    count=0
+
     handleAction = (id) => {
         return (
             <div>
-                <input type="button" value="EDIT" onClick={() => this.handleEdit(id)} data-toggle="modal" data-target="#myModal" />
-                <input type="button" value="DELETE" onClick={() => this.handleDelete(id)} />
+                <input type="button" value="EDIT" style={{ width: 60 }} onClick={() => this.handleEdit(id)} />&nbsp;
+                <input type="button" value="DELETE" style={{ width: 60 }} onClick={() => this.handleDelete(id)} />
             </div>
 
         )
@@ -60,24 +64,17 @@ class Table extends React.Component {
             })
     }
 
-    handleChange = (e) => {
-
-        let form_data = this.state.form_data
-        form_data[e.target.name] = e.target.value
-        this.setState({ form_data })
-    }
-
     handleDelete = (id) => {
         console.log('del id', id);
-        axios.post("https://reqres.in/api/users/", {id: id} )
-        .then(res => {
-            this.setState({
-                // form_data: res.data.data,
+        axios.post("https://reqres.in/api/users/", { id: id })
+            .then(res => {
+                this.setState({
+                    // form_data: res.data.data,
+                })
             })
-        })
-        .catch(err => {
+            .catch(err => {
 
-        })
+            })
     }
 
     handleEdit = (id) => {
@@ -96,7 +93,7 @@ class Table extends React.Component {
                 })
 
             // For POST
-            axios.post("https://reqres.in/api/users/", {uid: this.state.form_data.id} )
+            axios.post("https://reqres.in/api/users/", { uid: this.state.form_data.id })
                 .then(res => {
                     this.setState({
                         // form_data: res.data.data,
@@ -108,15 +105,32 @@ class Table extends React.Component {
         })
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault()
-        console.log('new data', this.state.form_data);
-        axios.post("url", this.state.form_data)
+
+    rowCheck = (row) => {
+        // console.log('row', row.selectedRows);
+        let rowArr = row.selectedRows
+        let sortedIds = []
+        for (let index = 0; index < rowArr.length; index++) {
+            sortedIds.push(rowArr[index].id)
+        }
+        this.count= sortedIds.length
+        this.setState({ sortedIds: sortedIds.join() })
+    }
+
+    handleTableSubmit = () => {
+        if (this.state.sortedIds == "") {
+            console.log('Sorry');
+
+        } else {
+            console.log('API', this.count);
+
+        }
     }
 
     render() {
         return (
             <>
+            Count= {}
                 <div className="datatable">
 
                     <DataTable
@@ -124,42 +138,13 @@ class Table extends React.Component {
                         columns={this.state.columnData}
                         data={this.state.tableData}
                         pagination
+                        selectableRows
+                        onSelectedRowsChange={this.rowCheck}
                     />
                 </div>
 
-                <React.Fragment>
-                    <div className="modal fade" id="myModal" role="dialog">
-                        <div className="modal-dialog">
-                            <div className="modal-content">
-                                <div className="modal-header">
-                                    <button type="button" className="close" data-dismiss="modal">&times;</button>
-                                    <h4 className="modal-title">Modal Header</h4>
-                                </div>
-                                <div className="modal-body">
-                                    <form>
-                                        <div>
-                                            <label>Email</label>
-                                            <input type="email" name="email" value={this.state.form_data.email} onChange={this.handleChange} />
-                                        </div>
-                                        <div>
-                                            <label>First Name</label>
-                                            <input type="text" name="first_name" value={this.state.form_data.first_name} onChange={this.handleChange} />
-                                        </div>
-                                        <div>
-                                            <label>Last Name</label>
-                                            <input type="text" name="last_name" value={this.state.form_data.last_name} onChange={this.handleChange} />
-                                        </div>
-                                        <input type="submit" value="UPDATE" onClick={this.handleSubmit} />
-                                    </form>
-                                </div>
-                                {/* <div className="modal-footer">
-                                    <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                                </div> */}
-                            </div>
+                <input type="submit" value="SUBMIT" onClick={this.handleTableSubmit} />
 
-                        </div>
-                    </div>
-                </React.Fragment>
 
             </>
         );
